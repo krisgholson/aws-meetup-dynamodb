@@ -1,0 +1,24 @@
+{
+  "name": "aws-meetup-dynamodb",
+  "version": "1.0.0",
+  "description": "Sample code for the Charleston area AWS meeting in mid August 2016",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krisgholson/aws-meetup-dynamodb.git"
+  },
+  "keywords": [
+    "aws",
+    "dynamodb",
+    "cloud"
+  ],
+  "author": "Kris Gholson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krisgholson/aws-meetup-dynamodb/issues"
+  },
+  "homepage": "https://github.com/krisgholson/aws-meetup-dynamodb#readme"
+}
