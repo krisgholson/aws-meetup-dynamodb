@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.dashboard')
+    .module('app.dynamo')
     .run(appRun);
 
   appRun.$inject = ['routerHelper'];
@@ -14,16 +14,16 @@
   function getStates() {
     return [
       {
-        state: 'dashboard',
+        state: 'dynamo',
         config: {
-          url: '/dashboard',
-          templateUrl: 'app/dashboard/dashboard.html',
-          controller: 'DashboardController',
+          url: '/',
+          templateUrl: 'app/dynamo/dynamo.html',
+          controller: 'DynamoController',
           controllerAs: 'vm',
-          title: 'dashboard',
+          title: 'Dynamo',
           settings: {
-            nav: 2,
-            content: '<i class="fa fa-dashboard"></i> Dashboard'
+            nav: 1,
+            content: '<i class="fa fa-lock"></i> Dynamo'
           }
         }
       }
