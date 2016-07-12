@@ -1,8 +1,6 @@
-# Dependency directory
-# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
-node_modules/
-bower_components/
-
-# other
+node_modules
+dist
 .tmp
+bower_components
+test/bower_components
 .DS_Store
