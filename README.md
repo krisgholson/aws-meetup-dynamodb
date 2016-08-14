@@ -17,32 +17,32 @@ aws dynamodb list-tables --endpoint-url http://localhost:8000
 
 Create Tables
 -------------
-aws dynamodb create-table --cli-input-json file://src/main/resources/create-table-product-catalog.json --endpoint-url http://localhost:8000
-aws dynamodb create-table --cli-input-json file://src/main/resources/create-table-forum.json --endpoint-url http://localhost:8000
-aws dynamodb create-table --cli-input-json file://src/main/resources/create-table-thread.json --endpoint-url http://localhost:8000
-aws dynamodb create-table --cli-input-json file://src/main/resources/create-table-reply.json --endpoint-url http://localhost:8000
+* aws dynamodb create-table --cli-input-json file://src/main/resources/create-table-product-catalog.json --endpoint-url http://localhost:8000
+* aws dynamodb create-table --cli-input-json file://src/main/resources/create-table-forum.json --endpoint-url http://localhost:8000
+* aws dynamodb create-table --cli-input-json file://src/main/resources/create-table-thread.json --endpoint-url http://localhost:8000
+* aws dynamodb create-table --cli-input-json file://src/main/resources/create-table-reply.json --endpoint-url http://localhost:8000
 
 Delete Tables
 -------------
-aws dynamodb delete-table --table-name ProductCatalog --endpoint-url http://localhost:8000
-aws dynamodb delete-table --table-name Forum --endpoint-url http://localhost:8000
-aws dynamodb delete-table --table-name Thread --endpoint-url http://localhost:8000
-aws dynamodb delete-table --table-name Reply --endpoint-url http://localhost:8000
+* aws dynamodb delete-table --table-name ProductCatalog --endpoint-url http://localhost:8000
+* aws dynamodb delete-table --table-name Forum --endpoint-url http://localhost:8000
+* aws dynamodb delete-table --table-name Thread --endpoint-url http://localhost:8000
+* aws dynamodb delete-table --table-name Reply --endpoint-url http://localhost:8000
 
 Load Table Data
 ---------------
-aws dynamodb batch-write-item --request-items file://src/main/resources/sampledata/ProductCatalog.json --endpoint-url http://localhost:8000
-aws dynamodb batch-write-item --request-items file://src/main/resources/sampledata/Forum.json --endpoint-url http://localhost:8000
-aws dynamodb batch-write-item --request-items file://src/main/resources/sampledata/Thread.json --endpoint-url http://localhost:8000
-aws dynamodb batch-write-item --request-items file://src/main/resources/sampledata/Reply.json --endpoint-url http://localhost:8000
+* aws dynamodb batch-write-item --request-items file://src/main/resources/sampledata/ProductCatalog.json --endpoint-url http://localhost:8000
+* aws dynamodb batch-write-item --request-items file://src/main/resources/sampledata/Forum.json --endpoint-url http://localhost:8000
+* aws dynamodb batch-write-item --request-items file://src/main/resources/sampledata/Thread.json --endpoint-url http://localhost:8000
+* aws dynamodb batch-write-item --request-items file://src/main/resources/sampledata/Reply.json --endpoint-url http://localhost:8000
 
 
 List Data
 ---------
-aws dynamodb scan --table-name ProductCatalog --endpoint-url http://localhost:8000
-aws dynamodb scan --table-name Forum --endpoint-url http://localhost:8000
-aws dynamodb scan --table-name Thread --endpoint-url http://localhost:8000
-aws dynamodb scan --table-name Reply --endpoint-url http://localhost:8000
+* aws dynamodb scan --table-name ProductCatalog --endpoint-url http://localhost:8000
+* aws dynamodb scan --table-name Forum --endpoint-url http://localhost:8000
+* aws dynamodb scan --table-name Thread --endpoint-url http://localhost:8000
+* aws dynamodb scan --table-name Reply --endpoint-url http://localhost:8000
 
 Notes
 -----
