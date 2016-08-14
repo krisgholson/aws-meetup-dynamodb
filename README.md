@@ -22,6 +22,10 @@ Create Tables
 * aws dynamodb create-table --cli-input-json file://src/main/resources/create-table-thread.json --endpoint-url http://localhost:8000
 * aws dynamodb create-table --cli-input-json file://src/main/resources/create-table-reply.json --endpoint-url http://localhost:8000
 
+Update Tables
+-------------
+* aws dynamodb update-table --cli-input-json file://src/main/resources/update-table-product-catalog-add-category-index.json --endpoint-url http://localhost:8000
+
 Delete Tables
 -------------
 * aws dynamodb delete-table --table-name ProductCatalog --endpoint-url http://localhost:8000
@@ -47,6 +51,11 @@ List Data
 Notes
 -----
 Best description of hash and range keys file:///Users/kris/AWS/DynamoDB%20Core%20Components%20-%20Amazon%20DynamoDB.htm
+
+Create a product catalog using the API
+--------------------------------------
+
+curl -H "Content-Type: application/json" -X POST --data @src/main/resources/sampledata/ProductCatalog-odyssey.json https://c0opzbccx8.execute-api.us-east-1.amazonaws.com/latest/product
 
 
 

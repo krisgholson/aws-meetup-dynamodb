@@ -12,17 +12,54 @@ module.exports = api;
  */
 api.post('/product', function (request) {
     'use strict';
+    var product, params;
+
+    product = request.body;
+    product.Id = uuid.v4();
+
     var params = {
         TableName: 'ProductCatalog',
-        Item: {
-            Id: uuid.v4(),
-            Title: request.body.title,
-            ProductCategory: request.body.productCategory
-        }
+        Item: product
     };
     // return dynamo result directly
     return dynamoDb.put(params).promise();
 }, {success: 201}); // Return HTTP status 201 - Created when successful
+
+/**
+ * Get all products in table
+ */
+api.get('/products', function (request) {
+    'use strict';
+    var params;
+    // Get the id from the pathParams
+    params = {
+        TableName: 'ProductCatalog'
+    };
+
+    // post-process dynamo result before returning
+    return dynamoDb.scan(params).promise();
+});
+
+/**
+ * Find products by category
+ */
+api.get('/products/search', function (request) {
+    'use strict';
+    var params, category;
+
+    category = request.queryString.category;
+
+    params = {
+        TableName: 'ProductCatalog',
+        IndexName: 'CategoryIndex',
+        KeyConditionExpression: 'ProductCategory = :category',
+        ExpressionAttributeValues: {
+            ':category': category
+        }
+    };
+
+    return dynamoDb.query(params).promise();
+});
 
 /**
  * Get product for {id}

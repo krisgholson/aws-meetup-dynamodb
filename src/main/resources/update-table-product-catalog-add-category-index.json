@@ -1,0 +1,29 @@
+{
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "ProductCategory",
+      "AttributeType": "S"
+    }
+  ],
+  "TableName": "ProductCatalog",
+  "GlobalSecondaryIndexUpdates": [
+    {
+      "Create": {
+        "IndexName": "CategoryIndex",
+        "KeySchema": [
+          {
+            "AttributeName": "ProductCategory",
+            "KeyType": "HASH"
+          }
+        ],
+        "Projection": {
+          "ProjectionType": "ALL"
+        },
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 1
+        }
+      }
+    }
+  ]
+}
