@@ -52,10 +52,22 @@ Notes
 -----
 Best description of hash and range keys file:///Users/kris/AWS/DynamoDB%20Core%20Components%20-%20Amazon%20DynamoDB.htm
 
-Create a product catalog using the API
---------------------------------------
+Create a product using the API
+------------------------------
 
-curl -H "Content-Type: application/json" -X POST --data @src/main/resources/sampledata/ProductCatalog-odyssey.json https://c0opzbccx8.execute-api.us-east-1.amazonaws.com/latest/product
+curl -H "Content-Type: application/json" -X POST --data @src/main/resources/sampledata/ProductCatalog-odyssey.json <API-URL>/product
+
+Read the newly added product using the API
+------------------------------------------
+
+curl <API-URL>/product/{id}
+
+Delete the new product using the API
+------------------------------------
+
+curl -X DELETE <API-URL>/product/{id}
+
+curl -X DELETE https://c0opzbccx8.execute-api.us-east-1.amazonaws.com/latest/product/25af6afe-02a0-488a-98ce-c9f0f423c06b
 
 
 

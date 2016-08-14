@@ -22,7 +22,13 @@ api.post('/product', function (request) {
         Item: product
     };
     // return dynamo result directly
-    return dynamoDb.put(params).promise();
+    return dynamoDb.put(params).promise()
+        .then(function () {
+            return {
+                id: product.Id,
+                message: 'Successfully created product.'
+            };
+        });
 }, {success: 201}); // Return HTTP status 201 - Created when successful
 
 /**
