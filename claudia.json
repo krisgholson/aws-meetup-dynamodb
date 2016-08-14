@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "aws-meetup-dynamodb-executor",
+    "name": "aws-meetup-dynamodb",
+    "region": "us-east-1"
+  },
+  "api": {
+    "id": "9tn1124x0d",
+    "module": "index"
+  }
+}

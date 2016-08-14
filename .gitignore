@@ -1,6 +1,8 @@
-node_modules
-dist
-.tmp
-bower_components
-test/bower_components
 .DS_Store
+.gradle/
+.idea/
+.tmp/
+build/
+node_modules/
+shared-local-instance.db
+

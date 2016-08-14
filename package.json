@@ -1,0 +1,39 @@
+{
+  "name": "aws-meetup-dynamodb",
+  "version": "1.0.0",
+  "description": "Doing some CRUD with DynamoDB. Sample claudiajs client draws heavily upon the dynamodb-example from https://github.com/claudiajs/example-projects.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "create": "claudia create --region us-east-1 --api-module index --policies policies",
+    "deploy": "claudia update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krisgholson/aws-meetup-dynamodb.git"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.4.11",
+    "claudia-api-builder": "^1.5.0",
+    "uuid": "^2.0.2"
+  },
+  "devDependencies": {
+    "claudia": "^1.5.0",
+    "mocha": "^2.5.3"
+  },
+  "keywords": [
+    "aws",
+    "dynamodb",
+    "lambda",
+    "claudiajs"
+  ],
+  "author": "Kris Gholson @krisgholson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krisgholson/aws-meetup-dynamodb/issues"
+  },
+  "homepage": "https://github.com/krisgholson/aws-meetup-dynamodb#readme"
+}
