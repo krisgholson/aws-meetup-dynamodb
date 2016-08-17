@@ -31,42 +31,8 @@ api.post('/product', function (request) {
         });
 }, {success: 201}); // Return HTTP status 201 - Created when successful
 
-// /**
-//  * Update an new product
-//  */
-// api.put('/product/{id}', function (request) {
-//     'use strict';
-//     var product, params;
-//
-//     product = request.body;
-//     product.Id = request.pathParams.id;
-//
-//     // YEAR is a reserved word .. http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html
-//     // thus the need to substitute it using ExpressionAttributeName
-//     params = {
-//         TableName: 'ProductCatalog',
-//         Key: {Id: product.Id},
-//         UpdateExpression: 'set #Year = :Year, Color = :Color, Price = :Price',
-//         ExpressionAttributeNames: {'#Year' : 'Year'},
-//         ExpressionAttributeValues: {
-//             ':Year' : product.Year,
-//             ':Color' : product.Color,
-//             ':Price' : product.Price
-//         }
-//     };
-//
-//     return docClient.update(params).promise()
-//         .then(function () {
-//             return {
-//                 id: product.Id,
-//                 message: 'Successfully updated product.'
-//             };
-//         });
-// });
-
 /**
- * If I am just going to trust the client blindly - I could do the update using docClient.put
- *
+ * Update an existing product
  */
 api.put('/product/{id}', function (request) {
     'use strict';
@@ -75,12 +41,21 @@ api.put('/product/{id}', function (request) {
     product = request.body;
     product.Id = request.pathParams.id;
 
+    // YEAR is a reserved word .. http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html
+    // thus the need to substitute it using ExpressionAttributeName
     params = {
         TableName: 'ProductCatalog',
-        Item: product
+        Key: {Id: product.Id},
+        UpdateExpression: 'set #Year = :Year, Color = :Color, Price = :Price',
+        ExpressionAttributeNames: {'#Year': 'Year'},
+        ExpressionAttributeValues: {
+            ':Year': product.Year,
+            ':Color': product.Color,
+            ':Price': product.Price
+        }
     };
 
-    return docClient.put(params).promise()
+    return docClient.update(params).promise()
         .then(function () {
             return {
                 id: product.Id,
@@ -88,6 +63,32 @@ api.put('/product/{id}', function (request) {
             };
         });
 });
+
+/**
+ * If I am just going to trust the client blindly - I *could* do the update using docClient.put
+ * (since it creates new or updates existing - based on primary key)
+ *
+ */
+// api.put('/product/{id}', function (request) {
+//     'use strict';
+//     var product, params;
+//
+//     product = request.body;
+//     product.Id = request.pathParams.id;
+//
+//     params = {
+//         TableName: 'ProductCatalog',
+//         Item: product
+//     };
+//
+//     return docClient.put(params).promise()
+//         .then(function () {
+//             return {
+//                 id: product.Id,
+//                 message: 'Successfully overwrote the product.'
+//             };
+//         });
+// });
 
 /**
  * Get all products in table
