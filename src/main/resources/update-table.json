@@ -1,0 +1,50 @@
+{
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "", 
+            "AttributeType": ""
+        }
+    ], 
+    "TableName": "", 
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 0, 
+        "WriteCapacityUnits": 0
+    }, 
+    "GlobalSecondaryIndexUpdates": [
+        {
+            "Update": {
+                "IndexName": "", 
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 0, 
+                    "WriteCapacityUnits": 0
+                }
+            }, 
+            "Create": {
+                "IndexName": "", 
+                "KeySchema": [
+                    {
+                        "AttributeName": "", 
+                        "KeyType": ""
+                    }
+                ], 
+                "Projection": {
+                    "ProjectionType": "", 
+                    "NonKeyAttributes": [
+                        ""
+                    ]
+                }, 
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 0, 
+                    "WriteCapacityUnits": 0
+                }
+            }, 
+            "Delete": {
+                "IndexName": ""
+            }
+        }
+    ], 
+    "StreamSpecification": {
+        "StreamEnabled": true, 
+        "StreamViewType": ""
+    }
+}

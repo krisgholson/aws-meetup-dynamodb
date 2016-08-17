@@ -1,10 +1,10 @@
 {
-  Make: "Honda",
-  Model: "Odyssey",
-  Year: 2004,
-  Color: [
+  "Make": "Honda",
+  "Model": "Odyssey",
+  "Year": 2004,
+  "Color": [
     "Silver"
   ],
-  Price: 1000,
-  ProductCategory: "Automobile"
+  "Price": 1000,
+  "ProductCategory": "Automobile"
 }
