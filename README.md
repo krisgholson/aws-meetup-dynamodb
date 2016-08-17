@@ -1,6 +1,8 @@
 Doing Some CRUD with DynamoDB
 =============================
 
+https://docs.google.com/presentation/d/1Q899QIJoVIr5VrJLtEyyBsxFBKz08tAFXxMbHQWNEEI/edit?usp=sharing
+
 Prerequisites
 -------------
 1. Download DynamoDB local
@@ -9,7 +11,7 @@ Prerequisites
 4. $ nvm install v4.3.2 (version that AWS Lambda uses .. http://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html) 
 5. $ nvm use v4.3.2
 6. $ npm install
-7. $ npm run create
+7. $ npm run create (after initial upload .. $ npm run update)
 
 List Tables
 -----------
@@ -48,9 +50,16 @@ List Data
 * aws dynamodb scan --table-name Thread --endpoint-url http://localhost:8000
 * aws dynamodb scan --table-name Reply --endpoint-url http://localhost:8000
 
-Notes
------
-Best description of hash and range keys file:///Users/kris/AWS/DynamoDB%20Core%20Components%20-%20Amazon%20DynamoDB.htm
+List all products using the API
+-------------------------------
+
+curl <API-URL>/products
+
+Search products by category (uses the index added above from update-table-product-catalog-add-category-index.json)
+
+curl <API-URL>/products/search?category=Book
+curl <API-URL>/products/search?category=Bicycle
+
 
 Create a product using the API
 ------------------------------
@@ -62,12 +71,18 @@ Read the newly added product using the API
 
 curl <API-URL>/product/{id}
 
+
+Update the product using the API
+--------------------------------
+
+curl -H "Content-Type: application/json" -X PUT --data @src/main/resources/sampledata/ProductCatalog-odyssey-updated.json <API-URL>/product/{id}
+
+
 Delete the new product using the API
 ------------------------------------
 
 curl -X DELETE <API-URL>/product/{id}
 
-curl -X DELETE https://c0opzbccx8.execute-api.us-east-1.amazonaws.com/latest/product/25af6afe-02a0-488a-98ce-c9f0f423c06b
 
 
 

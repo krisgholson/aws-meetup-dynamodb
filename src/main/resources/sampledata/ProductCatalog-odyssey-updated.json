@@ -1,0 +1,10 @@
+{
+  "Make": "Honda",
+  "Model": "Odyssey",
+  "Year": 2010,
+  "Color": [
+    "Purple"
+  ],
+  "Price": 8000,
+  "ProductCategory": "Automobile"
+}
