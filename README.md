@@ -3,6 +3,10 @@ Doing Some CRUD with DynamoDB
 
 https://docs.google.com/presentation/d/1Q899QIJoVIr5VrJLtEyyBsxFBKz08tAFXxMbHQWNEEI/edit?usp=sharing
 
+Credit
+------
+The sample code in index.js was derived from the excellent example project at https://github.com/claudiajs/example-projects.
+
 Prerequisites
 -------------
 1. Download DynamoDB local
